@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This CloudFormation template can be used to create a Cross-Account Role that allows the Sentry to collect from the current AWS account.
+Parameters:
+  CloudKnoxSentryIAMRoleName:
+    Description: Customize the name of IAM Cross Account role for CloudKnox Control Tower integration
+    Type: String
+    Default: IAM_R_KNOX_SECURITY
+  CloudKnoxSentryAccountId:
+    Description: Customize the name of IAM Cross Account role for CloudKnox Control Tower integration
+    Type: String
+    Default: '341476298946'
+Resources:
+  KnoxSecurityMember:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS:
+                - !Sub 'arn:${AWS::Partition}:iam::${CloudKnoxSentryAccountId}:role/${CloudKnoxSentryIAMRoleName}'
+            Action: 
+              - sts:AssumeRole
+      RoleName: IAM_R_KNOX_SECURITY_XA
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/SecurityAudit
