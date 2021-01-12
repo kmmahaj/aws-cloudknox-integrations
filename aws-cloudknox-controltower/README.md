@@ -1,11 +1,9 @@
 <p align="center">
 </p>
 
-# Use AWS Control Tower with CloudKnox to automate multi account least privileges in AWS
+# Automate multi account permissions management in AWS using CloudKnox and AWS Control Tower
 
-* AWS Control Tower Lifecyle Integration with CloudKnox - Allow new or updated AWS accounts in an AWS Control Tower based AWS Organization to be managed automatically by Datadog
-
-
+* AWS Control Tower Lifecyle Integration with CloudKnox - Allow new or updated AWS accounts in an AWS Control Tower based AWS Organization to be automatically monitored for permissions
 
 ## How it Works
 
