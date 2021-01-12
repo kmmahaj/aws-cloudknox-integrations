@@ -76,7 +76,7 @@ def addCloudKnoxAccount(apiId, accessToken, serviceId, timestamp,url,CloudKnoxSe
     cloudknoxDict = {}
     cloudknoxDict['authorizationSystemId'] = CloudKnoxSentryAccountId
     cloudknoxDict['accountsToAdd'] = [{'id': accId,
-                                       'rolename': 'IAM_R_KNOX_SECURITY_XA'}]
+                                       'roleName': 'IAM_R_KNOX_SECURITY_XA'}]
 
     payload = json.dumps(cloudknoxDict)
 
