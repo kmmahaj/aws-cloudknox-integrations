@@ -1,9 +1,9 @@
 <p align="center">
 </p>
 
-# Use AWS Control Tower with CloudKnox for automating Multi account Least Privileges in AWS
+# Use AWS Control Tower with CloudKnox to automate multi account least privileges in AWS
 
-* AWS Control Tower Lifecyle Integration with Datadog - Allow new or updated AWS accounts in an AWS Control Tower based AWS Organization to be managed automatically by Datadog
+* AWS Control Tower Lifecyle Integration with CloudKnox - Allow new or updated AWS accounts in an AWS Control Tower based AWS Organization to be managed automatically by Datadog
 
 
 
@@ -38,7 +38,7 @@
 
 3.	Launch the **aws-cloudknox-prereq.yml** and enter the Access Key, Secret Key and the Service Account ID generated in the previous step. Accept all other default values for this template.
 
-4.	The **aws-cloudknox-prereq.yml** template creates an Amazon S3 bucket with the following name: s3-cloudknoxiamuserrightsize-<AccountId>-<Region>. The <AccountId> and <Region> default to the AWS Account ID and AWS Region where you have deployed this template.
+4.	The **aws-cloudknox-prereq.yml** template creates an Amazon S3 bucket with the following name: s3-cloudknoxiamuserrightsize-accountid-region. The 'accountid' and 'region' default to the AWS Account ID and AWS Region of the account and home region for the AWS Control Tower management account.
 	1. Create a folder called ‘CloudKnox_TriggerLifecycleEvent’ in this S3 bucket. 
 	2. Upload the CloudKnox_TriggerLifecycleEvent.zip in this folder
 
@@ -60,10 +60,5 @@ Test by creating a Lifecycle Event and add a managed account:
  	- This can take up to 30 mins for the account to be sucessfully created and the AWS Control Tower Lifecycle Event to trigger
  	- Login to the AWS Control Tower managed account - 
  		- Validate that an AWS CloudFormation stack instance has been provisioned that launches the CloudKnox Integration role template in the managed account. 
- 		- Follow the step by step instructions in the CloudKnox documentation - https://docs.cloudknox.io/ to check that data collection has started for the newly added account. In approximately 15 mins this account will show up in the CloudKnox dashboard with aPrivileged Creep Index (PCI) score calculated for this account.
+ 		- Follow the step by step instructions in the CloudKnox documentation - https://docs.cloudknox.io/ to check that data collection has started for the newly added account. In approximately 15 mins this account will show up in the CloudKnox dashboard with a Privileged Creep Index (PCI) score calculated for this account.
  	
-
-
-## Author 
-
-Kanishk Mahajan
